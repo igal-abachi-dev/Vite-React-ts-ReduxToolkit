@@ -4,14 +4,14 @@ pre install:
 
 (npm i yarn -g)
 
-(yarn set version latest)
-
 ----
 create proj: (yarn v3 Pnp):
 
 (npx) yarn create vite react-app --template react-ts
 
 cd react-app
+
+(npx yarn set version stable)
 
 (npx) yarn
 
