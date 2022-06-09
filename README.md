@@ -1,16 +1,25 @@
-create: (yarn v3 Pnp):
+pre install:
 
-yarn create vite react-app --template react-ts
+(install node latest LTS)
+
+(npm i yarn -g)
+
+(yarn set version latest)
+
+----
+create proj: (yarn v3 Pnp):
+
+(npx) yarn create vite react-app --template react-ts
 
 cd react-app
 
-yarn install
+(npx) yarn
 
-yarn add -D sass
+(npx) yarn add -D sass
 
-yarn dev
+(npx) yarn dev
 
-yarn build
+(npx) yarn build
 
 ----------
 
