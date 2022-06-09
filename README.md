@@ -1,11 +1,39 @@
-pre install:
+# React 18 (+ Vite + Yarn PnP + Redux Toolkit + TypeScript + vanilla-extract + Router v6) Project starter template
+
+## stack:
+
+[React 18](https://reactjs.org/)
+
+
+[Vite 2.9](https://vitejs.dev/guide/why.html)
+
+
+[Yarn Berry Plug'n'Play / Zero install](https://yarnpkg.com/features/pnp)
+
+
+[Redux Toolkit](https://redux-toolkit.js.org/)
+
+
+[TypeScript 4](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+
+
+[vanilla-extract css](https://vanilla-extract.style/documentation/)
+
+
+[React Router DOM v6](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
+
+
+----
+
+
+## pre install:
 
 (install node latest LTS)
 
 (npm i yarn -g)
 
 ----
-create proj: (yarn v3 Pnp):
+## create proj: (yarn v3 Pnp):
 
 (npx) yarn create vite react-app --template react-ts
 
@@ -17,13 +45,16 @@ cd react-app
 
 (npx) yarn add -D sass
 
+(npx) yarn add -D vite-plugin-svgr
+
+
 (npx) yarn dev
 
 (npx) yarn build
 
 ----------
 
-deploy:
+## deploy:
 https://vitejs.dev/guide/static-deploy.html#vercel-for-git
 
 static export:
