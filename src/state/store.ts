@@ -10,12 +10,7 @@ const store = configureStore({
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: false  //better to not disable check when not needed
-            /*{
-            ignoredActions: [
-              'counterReducer/increment',
-            ]
-          }*/
+            serializableCheck: false
         })
 });
 
@@ -43,8 +38,5 @@ export default store;
 //https://redux.js.org/style-guide/style-guide#do-not-put-non-serializable-values-in-state-or-actions
 //Promises, Symbols, Maps/Sets, functions, or class instances
 
-//Reducers Must Not Have Side Effects: (AJAX calls, timeouts, promises),
-// generate random values, modify variables outside the reducer
-
-//Only One Redux Store/Provider Per App
+//Reducers Must Not Have Side Effects: (AJAX calls, timeouts, promises)
 
