@@ -26,8 +26,22 @@
 [Axios async-await](https://axios-http.com/docs/intro)
 
 ----
+yarn add prop-types react-redux @reduxjs/toolkit
+
+yarn add -D @types/node @types/prop-types @types/react-redux
+
+yarn add axios
+
+yarn add @vanilla-extract/css  vanilla-classnames
+
+yarn add -D @vanilla-extract/vite-plugin
+
+yarn add lodash luxon react-router-dom
+
+yarn add -D @types/lodash @types/luxon
 
 
+----
 ## pre install:
 
 (install node latest LTS)
