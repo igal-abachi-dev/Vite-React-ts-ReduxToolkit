@@ -59,7 +59,7 @@ yarn add prop-types react-redux @reduxjs/toolkit
 
 yarn add -D @types/node @types/prop-types @types/react-redux
 
-yarn add axios
+yarn add axios qs
 
 yarn add @vanilla-extract/css  vanilla-classnames
 
