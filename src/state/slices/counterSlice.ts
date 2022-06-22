@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {RootState, AppThunk} from './store';
-import {fetchCount} from '../components/counter/counterAPI';
+import {RootState, AppThunk} from '../store';
+import {HttpClient} from "@/api/http";
 
 
 //Normalize Complex Nested/Relational State
@@ -17,6 +17,8 @@ const initialState: CounterState = {
     status: 'idle',
 };
 
+const http = new HttpClient("https://jsonplaceholder.typicode.com");
+
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
 // will call the thunk with the `dispatch` function as the first argument. Async
@@ -29,13 +31,14 @@ export const incrementAsync = createAsyncThunk(
     'counter/fetchCount',
     async (amount: number, thunkAPI) => {
         try {
-            const response = await fetchCount(amount);
+            const response = await http.get<any>('/todos'/*,'amount='+amount*/);
+
             // The value we return becomes the `fulfilled` action payload
-            return response?.data;
+            return response.length;
         } catch (err: any) {
             // Use `err.response.data` as `action.payload` for a `rejected` action,
             // by explicitly returning it using the `rejectWithValue()` utility
-            return thunkAPI.rejectWithValue(err?.response?.data);
+            return thunkAPI.rejectWithValue(err);
         }
     }
 );

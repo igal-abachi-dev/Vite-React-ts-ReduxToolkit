@@ -7,9 +7,12 @@ import {
     incrementAsync,
     incrementIfOdd,
     selectCount,
-} from '../../state/counterSlice';
-import styles from './Counter.module.scss';
-import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
+} from '../../state/slices/counterSlice';
+
+import {button, asyncButton, row, value, textbox, counterTheme} from './Counter.css';
+import {vcn} from 'vanilla-classnames'
+
+import {useAppDispatch, useAppSelector} from "../../hooks/redux-hooks";
 
 export type nullable<T> = (T | null | undefined);
 
@@ -23,29 +26,29 @@ export function Counter() {
 //if component internally does dispatch , pass and propogate dispatch to component ,dispatch:any
 
     return (
-        <div>
+        <div className={counterTheme}>
             <BtnActionRow dispatch={dispatch} count={count}/>
-            <div className={styles.row}>
+            <div className={row }>
                 <input
-                    className={styles.textbox}
+                    className={textbox}
                     aria-label="Set increment amount"
                     value={incrementAmount}
                     onChange={(e) => setIncrementAmount(e.target.value)}
                 />
                 <button
-                    className={styles.button}
+                    className={button}
                     onClick={() => dispatch(incrementByAmount(incrementValue))}
                 >
                     Add Amount
                 </button>
                 <button
-                    className={styles.asyncButton}
+                    className={asyncButton}
                     onClick={() => dispatch(incrementAsync(incrementValue))}
                 >
                     Add Async
                 </button>
                 <button
-                    className={styles.button}
+                    className={button}
                     onClick={() => dispatch(incrementIfOdd(incrementValue))}
                 >
                     Add If Odd
@@ -56,20 +59,20 @@ export function Counter() {
 }
 
 
-export function BtnActionRow(props:any) {
+export function BtnActionRow(props: any) {
 
     return (
-        <div className={styles.row}>
+        <div className={row }>
             <button
-                className={styles.button}
+                className={button}
                 aria-label="Decrement value"
                 onClick={() => props.dispatch(decrement())}
             >
                 -
             </button>
-            <span className={styles.value}>{props.count}</span>
+            <span className={value}>{props.count}</span>
             <button
-                className={styles.button}
+                className={button}
                 aria-label="Increment value"
                 onClick={() => props.dispatch(increment())}
             >

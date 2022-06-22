@@ -3,7 +3,6 @@ import {useEffect, useRef} from 'react';
 import {
     createDispatchHook,
     createSelectorHook,
-    RootStateOrAny,
     TypedUseSelectorHook,
     useDispatch,
     useSelector
